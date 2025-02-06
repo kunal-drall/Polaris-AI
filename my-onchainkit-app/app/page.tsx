@@ -1,24 +1,25 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
-import { Wallet, ConnectWallet, WalletDropdown } from "@coinbase/onchainkit/wallet"
-import { Identity, Avatar, Name, Address, EthBalance } from "@coinbase/onchainkit/identity"
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
-import FeatureCard from "./components/FeatureCard"
-import CodeSnippet from "./components/CodeSnippet"
+import Footer from "./components/Footer";
+import FeatureCard from "./components/FeatureCard";
+import CodeSnippet from "./components/CodeSnippet";
 
 export default function Home() {
-  const router = useRouter()
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="min-h-screen flex justify-center items-center text-gray-600 dark:text-gray-400">Loading...</div>
+  if (!mounted)
+    return (
+      <div className="min-h-screen flex justify-center items-center text-gray-600 dark:text-gray-400">
+        Loading...
+      </div>
+    );
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
@@ -59,10 +60,7 @@ export default function Home() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <FeatureCard
-              title="AI-Powered Transactions"
-              description="Perform swaps, staking, and bridging with ease."
-            />
+            <FeatureCard title="AI-Powered Transactions" description="Perform swaps, staking, and bridging with ease." />
             <FeatureCard title="On-Chain Chatbot" description="Interact via web-based and Telegram chat." />
             <FeatureCard title="Decentralized Identity" description="Fetch usernames, avatars, and balances." />
             <FeatureCard title="Secure & Trustless" description="Ensuring user privacy and smart contract security." />
@@ -91,32 +89,9 @@ Polaris AI: "Your USDC is now staked!"
             />
           </div>
         </section>
-
-        {/* 🔹 USER IDENTITY SECTION */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Your Wallet & Identity</h2>
-          <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto">
-            <Wallet>
-              <ConnectWallet>
-                <WalletDropdown>
-                  <Identity>
-                    <div className="flex items-center space-x-4">
-                      <Avatar className="h-12 w-12 rounded-full" />
-                      <div>
-                        <Name className="font-bold text-lg" />
-                        <Address className="text-sm text-gray-600 dark:text-gray-400" />
-                        <EthBalance className="text-green-400 text-sm" />
-                      </div>
-                    </div>
-                  </Identity>
-                </WalletDropdown>
-              </ConnectWallet>
-            </Wallet>
-          </div>
-        </section>
       </main>
 
       <Footer />
     </div>
-  )
+  );
 }

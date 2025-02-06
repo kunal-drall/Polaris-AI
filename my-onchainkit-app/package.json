@@ -12,6 +12,7 @@
     "@coinbase/agentkit": "^0.1.1",
     "@coinbase/agentkit-langchain": "^0.1.0",
     "@coinbase/onchainkit": "^0.36.9",
+    "@coinbase/wallet-sdk": "^4.3.0",
     "@langchain/core": "^0.3.38",
     "@langchain/langgraph": "^0.2.44",
     "@langchain/openai": "^0.4.2",
