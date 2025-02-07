@@ -1,0 +1,9 @@
+[submodule "my-onchainkit-app/PolarisAI-Foundry/lib/forge-std"]
+	path = my-onchainkit-app/PolarisAI-Foundry/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "my-onchainkit-app/PolarisAI-Foundry/lib/openzeppelin-contracts"]
+	path = my-onchainkit-app/PolarisAI-Foundry/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "my-onchainkit-app/PolarisAI-Foundry/lib/v2-periphery"]
+	path = my-onchainkit-app/PolarisAI-Foundry/lib/v2-periphery
+	url = https://github.com/Uniswap/v2-periphery
